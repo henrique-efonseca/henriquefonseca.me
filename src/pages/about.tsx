@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import AvatarImage from '../../public/assets/blog/authors/bartosz.jpeg';
+import AvatarImage from '../../public/assets/blog/authors/henriquefonseca.png';
 import { Container } from '../components/Container';
 import { ExternalLink } from '../components/ExternalLink';
 import { PageTitle } from '../components/PageTitle';
@@ -54,7 +54,7 @@ export default function AboutMe() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <PageTitle>Hi, I&apos;m Bartosz Jarocki.</PageTitle>
+            <PageTitle>Hi, I&apos;m Henrique Fonseca.</PageTitle>
             <div className="mt-6 text-base">{AboutExtended}</div>
             <div className="mt-6 flex gap-6">
               {SocialMedia.map((socialProfile) => (
@@ -68,60 +68,17 @@ export default function AboutMe() {
             </div>
 
             <Section>
-              <Section.Title as="h2">Work</Section.Title>
+              <Section.Title as="h2">People that inspire me</Section.Title>
               <Section.Content>
-                I&apos;m a software developer with over 13 years of experience. I started as a C/C++
-                developer, then transitioned to Android world and now I&apos;m mostly focused on
-                developing great user experiences using React.
-                <br />
-                <br />I created multiple Android applications from scratch for companies around the
-                world like{' '}
-                <ExternalLink href={'https://www.visionmedia.com/'}>VisionMedia</ExternalLink>,{' '}
-                <ExternalLink href={'https://www.dkms.org/en'}>DKMS</ExternalLink>,{' '}
-                <ExternalLink href={'https://www.aaa.com/'}>AAA</ExternalLink>,{' '}
-                <ExternalLink href={'https://polskapress.pl/pl'}>PolskaPress</ExternalLink> or{' '}
-                <ExternalLink href={'https://www.canaldigital.no/'}>Canal Digital</ExternalLink>. I
-                helped to create/review/design mobile applications for startups like{' '}
-                <ExternalLink href={'https://play.google.com/store/apps/details?id=io.bimapp'}>
-                  Bim
-                </ExternalLink>
-                , <ExternalLink href={'https://www.tastycloud.fr'}>Tastycloud</ExternalLink>,{' '}
-                <ExternalLink
-                  href={'https://play.google.com/store/apps/details?id=com.howdyhub.howdy'}
-                >
-                  Howdy
-                </ExternalLink>{' '}
-                and{' '}
-                <ExternalLink
-                  href={
-                    'https://play.google.com/store/apps/details?id=com.vikingco.vikingapp.poland'
-                  }
-                >
-                  Mobile Vikings
-                </ExternalLink>
-                . I developed a WebRTC powered video conferencing frontend application using
-                React.js/GraphQL/Typescript for{' '}
-                <ExternalLink href={'https://www.evercast.us'}>Evercast</ExternalLink>. I also had
-                led development teams many times. If you&apos;d like to work with me{' '}
-                <ExternalLink href="https://twitter.com/messages/compose?recipient_id=512460212">
-                  DM me on Twitter
-                </ExternalLink>{' '}
-                or just{' '}
-                <ExternalLink href="mailto:bartosz.jarocki@icloud.com">email me.</ExternalLink>
+                {PeopleWorthFollowingOnTwitter.map<React.ReactNode>((personOnTwitter) => (
+                  <ExternalLink key={personOnTwitter.name} href={personOnTwitter.link}>
+                    {personOnTwitter.name}
+                  </ExternalLink>
+                )).reduce((prev, curr) => [prev, ', ', curr])}
+                .
               </Section.Content>
             </Section>
-            <Section>
-              <Section.Title as="h2">Books worth re-reading</Section.Title>
-              <Section.Content>
-                <ul className="mt-1 list-disc list-inside">
-                  {Books.map((book) => (
-                    <li key={book.name}>
-                      <ExternalLink href={book.link}>{book.name}</ExternalLink>
-                    </li>
-                  ))}
-                </ul>
-              </Section.Content>
-            </Section>
+
             <Section>
               <Section.Title as="h2">Podcasts I listen to</Section.Title>
               <Section.Content>
@@ -134,18 +91,20 @@ export default function AboutMe() {
                 </ul>
               </Section.Content>
             </Section>
+
             <Section>
-              <Section.Title as="h2">Blogs I read</Section.Title>
+              <Section.Title as="h2">Books worth re-reading</Section.Title>
               <Section.Content>
                 <ul className="mt-1 list-disc list-inside">
-                  {Blogs.map((blog) => (
-                    <li key={blog.name}>
-                      <ExternalLink href={blog.link}>{blog.name}</ExternalLink>
+                  {Books.map((book) => (
+                    <li key={book.name}>
+                      <ExternalLink href={book.link}>{book.name}</ExternalLink>
                     </li>
                   ))}
                 </ul>
               </Section.Content>
             </Section>
+
             <Section>
               <Section.Title as="h2">Videos worth watching</Section.Title>
               <Section.Content>
@@ -158,17 +117,7 @@ export default function AboutMe() {
                 </ul>
               </Section.Content>
             </Section>
-            <Section>
-              <Section.Title as="h2">People with unique perspective I follow</Section.Title>
-              <Section.Content>
-                {PeopleWorthFollowingOnTwitter.map<React.ReactNode>((personOnTwitter) => (
-                  <ExternalLink key={personOnTwitter.name} href={personOnTwitter.link}>
-                    {personOnTwitter.name}
-                  </ExternalLink>
-                )).reduce((prev, curr) => [prev, ', ', curr])}
-                .
-              </Section.Content>
-            </Section>
+
             <Section>
               <Section.Title as="h2">Quote worth thinking about</Section.Title>
               <Section.Content>

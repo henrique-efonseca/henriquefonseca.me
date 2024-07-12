@@ -1,20 +1,20 @@
 import { NextApiHandler } from 'next';
 import RSS from 'rss';
 
-import { notesApi } from '../../lib/notesApi';
+import { postsApi } from '../../lib/postsApi';
 
 const rss: NextApiHandler = async (req, res) => {
   const feed = new RSS({
-    title: 'Bartosz Jarocki',
-    site_url: 'https://jarocki.me',
-    feed_url: 'https://jarocki.me/rss.xml',
+    title: 'Henrique Fonseca',
+    site_url: 'https://henriquefonseca.me',
+    feed_url: 'https://henriquefonseca/rss.xml',
   });
 
-  const allPosts = await notesApi.getNotes();
+  const allPosts = await postsApi.getPosts();
   allPosts.map((post) => {
     feed.item({
       title: post.title,
-      url: `https://jarocki.me/notes/${post.slug}`,
+      url: `https://henriquefonseca/blog/${post.slug}`,
       date: post.publishedAt,
       description: post.description,
     });

@@ -4,7 +4,7 @@ import { Container } from './Container';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  intro: string;
+  intro: React.ReactNode | string;
 }
 
 export const PageLayout = ({ title, intro, children, ...rest }: React.PropsWithChildren<Props>) => {
@@ -14,7 +14,7 @@ export const PageLayout = ({ title, intro, children, ...rest }: React.PropsWithC
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 text-balance">
           {title}
         </h1>
-        <p className="mt-6 text-base text-balance">{intro}</p>
+        <div className="mt-6 text-base text-balance">{intro}</div> {/* Change p to div */}
       </header>
       <div className="mt-16 sm:mt-20">{children}</div>
     </Container>

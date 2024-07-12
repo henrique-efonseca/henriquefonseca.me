@@ -9,23 +9,24 @@ const config = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 's3.**.amazonaws.com',
+        hostname: '**.amazonaws.com',
       },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: '**.notion.so',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.googleapis.com',
+      }
+      
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/blog/:slug*',
-        destination: '/notes/:slug*',
-        permanent: true,
-      },
-    ];
-  },
+ 
 };
 
 export default config;

@@ -1,24 +1,27 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { ArticleJsonLd, NextSeo } from 'next-seo';
+import Image from 'next/image';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
 
 import { XIcon } from '../../components/icons/XIcon';
-import { NoteLayout } from '../../components/notes/NoteLayout';
+import { PostLayout } from '../../components/posts/PostLayout';
 import { NotionBlockRenderer } from '../../components/notion/NotionBlockRenderer';
-import { Note as NoteType, notesApi } from '../../lib/notesApi';
+import { Post as PostType, postsApi } from '../../lib/postsApi';
+import { Badge } from 'src/components/Badge';
 
 type Props = {
-  note: NoteType;
-  noteContent: any[];
+  post: PostType;
+  postContent: any[];
+  previousPathname?: any;
 };
 
-export default function Note({
-  note: { title, description, createdAt, slug },
-  noteContent,
+export default function Post({
+  post: { title, description, createdAt, slug, coverImage, tags },
+  postContent,
   previousPathname,
-}: Props & { previousPathname: string }) {
-  const url = `${process.env.NEXT_PUBLIC_URL}/notes/${slug}`;
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const url = `${process.env.NEXT_PUBLIC_URL}/blog/${slug}`;
   const openGraphImageUrl = `${process.env.NEXT_PUBLIC_URL}/api/og?title=${title}&description=${description}`;
 
   useEffect(() => {
@@ -40,15 +43,33 @@ export default function Note({
         images={[openGraphImageUrl]}
         title={title}
         datePublished={createdAt}
-        authorName="Bartosz Jarocki"
+        authorName="Henrique Fonseca"
         description={description}
       />
-      <NoteLayout
+
+      <PostLayout
         meta={{ title, description, date: createdAt }}
         previousPathname={previousPathname}
       >
+        <div className="mt-4 flex max-w-xl flex-wrap gap-1 font-mono">
+          {tags.map((tag) => (
+            <Badge key={tag} href={`/blog/tags/${tag}`}>
+              #{tag}
+            </Badge>
+          ))}
+        </div>
+        {coverImage && (
+          <Image
+            width={500}
+            height={500}
+            src={coverImage}
+            alt={`Cover image for ${title}`}
+            className="w-full h-96 object-cover rounded-lg"
+          />
+        )}
+
         <div className="pb-32">
-          {noteContent.map((block) => (
+          {postContent.map((block) => (
             <NotionBlockRenderer key={block.id} block={block} />
           ))}
 
@@ -64,35 +85,35 @@ export default function Note({
             </h4>
           </a>
         </div>
-      </NoteLayout>
+      </PostLayout>
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (context) => {
   const slug = context.params?.slug;
-  const allNotes = await notesApi.getNotes();
-  const note = allNotes.find((note) => note.slug === slug);
+  const allPosts = await postsApi.getPosts();
+  const post = allPosts.find((post) => post.slug === slug);
 
-  if (!note) {
+  if (!post) {
     return {
       notFound: true,
     };
   }
 
-  const noteContent = await notesApi.getNote(note.id);
+  const postContent = await postsApi.getPost(post.id);
 
   return {
     props: {
-      note,
-      noteContent,
+      post,
+      postContent,
     },
     revalidate: 10,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await notesApi.getNotes();
+  const posts = await postsApi.getPosts();
 
   return {
     paths: posts.map((post) => ({ params: { slug: post.slug } })),

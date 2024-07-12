@@ -8,7 +8,7 @@ export const Resume = () => {
     <div className="max-w-[420px] rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">My Experience</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {Work.map((role, roleIndex) => (
@@ -17,7 +17,7 @@ export const Resume = () => {
               <Image
                 src={role.logo}
                 alt="Logo"
-                className="h-7 w-7 rounded-full object-cover"
+                className="h-6 w-6 rounded object-cover"
                 unoptimized
               />
             </div>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from Next.js
 
 import { Project } from '../data/lifeApi';
 import { Badge } from './Badge';
@@ -28,6 +29,7 @@ export const ProjectCard = ({ project }: Props) => {
         )}
       </div>
       <Card.Description>{project.description}</Card.Description>
+
       <p className="mt-6 font-mono flex flex-wrap gap-1 z-10 mb-6">
         {project.techStack.map((techStackItem) => (
           <Badge key={techStackItem}>{techStackItem}</Badge>

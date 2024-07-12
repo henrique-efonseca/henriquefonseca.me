@@ -86,10 +86,19 @@ const CardEyebrow = ({
   );
 };
 
+const CardReadMore = ({ href, children }: { href?: string; children?: React.ReactNode }) => {
+  return href ? (
+    <div className="relative z-10 mt-4 text-sm font-medium text-primary">
+      <Link href={href}>{children}</Link>
+    </div>
+  ) : null;
+};
+
 export const Card = Object.assign(CardRoot, {
   Link: CardLink,
   Title: CardTitle,
   Description: CardDescription,
   Cta: CardCta,
   Eyebrow: CardEyebrow,
+  ReadMore: CardReadMore,
 });

@@ -8,7 +8,7 @@ const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-export type Note = {
+export type Post = {
   id: string;
   createdAt: string;
   lastEditedAt: string;
@@ -91,40 +91,38 @@ const CompareFunctionLookup = {
   desc: compareDesc,
 };
 
-class NotesApi {
+class PostsApi {
   constructor(
     private readonly notion: Client,
     private readonly databaseId: string,
   ) {}
 
-  async getNotes(sortOrder: 'asc' | 'desc' = 'desc', limit?: number) {
-    const notes = await this.getDatabaseContent(this.databaseId);
+  async getPosts(sortOrder: 'asc' | 'desc' = 'desc', limit?: number) {
+    const Posts = await this.getDatabaseContent(this.databaseId);
 
-    return notes
-      .sort((a, b) => {
-        return CompareFunctionLookup[sortOrder](new Date(a.publishedAt), new Date(b.publishedAt));
-      })
-      .slice(0, limit);
+    return Posts.sort((a, b) => {
+      return CompareFunctionLookup[sortOrder](new Date(a.publishedAt), new Date(b.publishedAt));
+    }).slice(0, limit);
   }
 
-  async getNotesByTag(tag: string, sortOrder: 'asc' | 'desc' = 'desc', limit?: number) {
-    const notes = await notesApi.getNotes(sortOrder, limit);
-    const relatedNotes = notes.filter((post) => post.tags.includes(tag));
+  async getPostsByTag(tag: string, sortOrder: 'asc' | 'desc' = 'desc', limit?: number) {
+    const Posts = await postsApi.getPosts(sortOrder, limit);
+    const relatedPosts = Posts.filter((post) => post.tags.includes(tag));
 
-    return relatedNotes;
+    return relatedPosts;
   }
 
-  async getNote(id: string) {
+  async getPost(id: string) {
     return this.getPageContent(id);
   }
 
   async getAllTags() {
-    const posts = await notesApi.getNotes();
+    const posts = await postsApi.getPosts();
 
-    return Array.from(new Set(posts.map((note) => note.tags).flat()));
+    return Array.from(new Set(posts.map((Post) => Post.tags).flat()));
   }
 
-  private getDatabaseContent = async (databaseId: string): Promise<Note[]> => {
+  private getDatabaseContent = async (databaseId: string): Promise<Post[]> => {
     const db = await this.notion.databases.query({ database_id: databaseId });
 
     while (db.has_more && db.next_cursor) {
@@ -147,7 +145,10 @@ class NotesApi {
           id: page.id,
           createdAt: page.created_time,
           lastEditedAt: page.last_edited_time,
-          coverImage: page.cover?.type === 'external' ? page.cover.external.url : null,
+          coverImage:
+            page.cover?.type === 'external'
+              ? page.cover.external.url
+              : page.cover?.file.url || null,
           tags:
             'multi_select' in page.properties.hashtags
               ? page.properties.hashtags.multi_select.map((tag) => tag.name)
@@ -236,4 +237,4 @@ class NotesApi {
   };
 }
 
-export const notesApi = new NotesApi(notion, process.env.NOTION_DATABASE_ID!);
+export const postsApi = new PostsApi(notion, process.env.NOTION_DATABASE_ID!);

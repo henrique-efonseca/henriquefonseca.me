@@ -1,26 +1,26 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 import React from 'react';
 
-import { PageLayout } from '../../components/PageLayout';
-import { NotePreview } from '../../components/notes/NotePreview';
-import { Note, notesApi } from '../../lib/notesApi';
+import { PageLayout } from '../../../components/PageLayout';
+import { PostPreview } from '../../../components/posts/PostPreview';
+import { Post, postsApi } from '../../../lib/postsApi';
 
 const seoTitle = 'Tags';
 const seoDescription = 'All of my blog posts tagged with ';
 
 interface Props {
   tag: string;
-  relatedNotes: Note[];
+  relatedPosts: Post[];
 }
 
-export default function Tag({ tag, relatedNotes }: Props) {
+export default function Tag({ tag, relatedPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <NextSeo
         title={seoTitle}
         description={`${seoDescription}#${tag}}`}
-        canonical={`${process.env.NEXT_PUBLIC_URL}/tags/${tag}`}
+        canonical={`${process.env.NEXT_PUBLIC_URL}/blog/tags/${tag}`}
         openGraph={{
           images: [
             {
@@ -32,8 +32,8 @@ export default function Tag({ tag, relatedNotes }: Props) {
       <PageLayout title="Tags" intro={`All the articles from #${tag}`}>
         <div className="mt-24 md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
-            {relatedNotes.map((note) => (
-              <NotePreview key={note.slug} note={note} />
+            {relatedPosts.map((post) => (
+              <PostPreview key={post.slug} post={post} />
             ))}
           </div>
         </div>
@@ -50,11 +50,11 @@ export const getStaticProps: GetStaticProps<Props, { tag: string }> = async (con
     };
   }
 
-  const relatedNotes = await notesApi.getNotesByTag(tag);
+  const relatedPosts = await postsApi.getPostsByTag(tag);
 
   return {
     props: {
-      relatedNotes,
+      relatedPosts,
       tag,
     },
     revalidate: 10,
@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps<Props, { tag: string }> = async (con
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const tags = await notesApi.getAllTags();
+  const tags = await postsApi.getAllTags();
 
   return {
     paths: tags.map((tag) => ({

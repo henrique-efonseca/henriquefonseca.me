@@ -1,35 +1,49 @@
 import { ExternalLink } from '../components/ExternalLink';
 import { GitHubIcon } from '../components/icons/GitHubIcon';
-import { InstagramIcon } from '../components/icons/InstagramIcon';
+import { EmailIcon } from '../components/icons/EmailIcon';
 import { XIcon } from '../components/icons/XIcon';
-import AmbitLogo from '../images/logos/ambit.png';
-import BarepapersLogo from '../images/logos/barepapers.svg';
-import BimLogo from '../images/logos/bim.png';
-import CDGOLogo from '../images/logos/cdgo.png';
-import ClevertechLogo from '../images/logos/clevertech.png';
-import EvercastLogo from '../images/logos/evercast.svg';
-import Howdy from '../images/logos/howdy.png';
-import JarockiMeLogo from '../images/logos/jarocki.svg';
-import JojoMobileLogo from '../images/logos/jojomobile.png';
-import MonitoLogo from '../images/logos/monito.svg';
-import Consultly from '../images/logos/consultly.svg';
-import MobileVikingsLogo from '../images/logos/mv.png';
-import NSNLogo from '../images/logos/nsn.svg';
-import ParabolLogo from '../images/logos/parabol.svg';
-import TastyCloudLogo from '../images/logos/tastycloud.png';
-import YearProgressLogo from '../images/logos/yearprogress.svg';
-import Minimal from '../images/logos/minimal.svg';
-import { LinkedInIcon } from '../components/icons/LinkedInIcon';
 
-export const Name = 'Bartosz Jarocki';
+import ClevertechLogo from '../images/logos/clevertech.png';
+import JojoMobileLogo from '../images/logos/jojomobile.png';
+
+// Projects
+import CareplaceLogo from '../images/logos/careplace.svg';
+import AstroPiLogo from '../images/emojis/satellite.png';
+import CanSatLogo from '../images/emojis/canned_food.png';
+import SwiftSuggestLogo from '../images/logos/swiftsuggest.png';
+import CarbonTreeLogo from '../images/emojis/deciduous_tree.png';
+
+// Experience
+import softwareEngineeringLogo from '../images/emojis/computer.png';
+import startupFounderLogo from '../images/emojis/rocket.png';
+import associationFounderLogo from '../images/emojis/handshake.png';
+import projectManagementLogo from '../images/emojis/clipboard.png';
+import networkingEngineeringLogo from '../images/emojis/globe_with_meridians.png';
+
+// SKills
+import frontEndLogo from '../images/emojis/art.png';
+import backEndLogo from '../images/emojis/brain.png';
+import testingLogo from '../images/emojis/microscope.png';
+import devOpsLogo from '../images/emojis/gear.png';
+import embeddedSystemsLogo from '../images/emojis/hammer_and_wrench.png';
+import businessLogo from '../images/emojis/necktie.png';
+import financeLogo from '../images/emojis/chart_with_upwards_trend.png';
+import marketingLogo from '../images/emojis/megaphone.png';
+
+import { LinkedInIcon } from '../components/icons/LinkedInIcon';
+import { sk } from 'date-fns/locale';
+
+export const Name = 'Henrique Fonseca';
 
 export const About = (
   <>
-    {`I used to consider myself a software engineer, but the reality is that I simply enjoy creating things. If you'd like to get in touch,`}{' '}
-    <ExternalLink href="mailto:bartosz@jarocki.me">send me an email.</ExternalLink>
+    {`While many might call me a Software Engineer, I consider myself a Problem Solver at heart.
+I'm always looking for new challenges and opportunities to learn and grow!`}{' '}
   </>
 );
-export const AboutExtended = `I live in Wrocław, Poland, having grown up in the small town of Góra in the western part of the country. I have a bachelor's degree in Control Systems Engineering and Robotics from the Wrocław University of Technology. I like programming, books, plants, mountain biking, whisky, and traveling the world with my wife, Kasia. The cosmos fascinates me, and I take great delight in gazing at the stars.`;
+export const AboutExtended = `While many might call me a Software Engineer, I consider myself a Problem Solver at heart.
+I thrive on learning about diverse topics and working across various industries. My journey includes: Software Development, Startup Founder, Association Founder, Project Management, Networking Engineering, and more. My passion lies in leveraging technology to drive innovation and create solutions that propel progress and add value to society.
+I'm always looking for new challenges and opportunities to learn and grow 😄!`;
 
 export type Project = {
   title: string;
@@ -40,185 +54,284 @@ export type Project = {
     label: string;
     href: string;
   };
+  liveLink?: {
+    label: string;
+    href: string;
+  };
+  readMoreLink?: {
+    label: string;
+    href: string;
+  };
+  githubLink?: {
+    label: string;
+    href: string;
+  };
 };
 
-export const MyCurrentProjects: Project[] = [
+export const MyProjects: Project[] = [
   {
-    title: 'Consultly',
-    techStack: ['Side Project', 'TypeScript', 'Next.js', 'WebRTC'],
-    description: 'A platform to build and grow your online business.',
-    logo: Consultly,
-    link: {
-      label: 'consultly.com',
-      href: 'https://consultly.com',
-    },
-  },
-  {
-    title: 'Monito',
-    techStack: ['Side Project', 'TypeScript', 'Next.js', 'Browser Extension'],
-    description: 'Browser extension that records everything happening in a web application.',
-    logo: MonitoLogo,
-    link: {
-      label: 'monito.dev',
-      href: 'https://monito.dev',
-    },
-  },
-  {
-    title: 'Jarocki.me',
-    techStack: ['Side Project', 'Next.js', 'MDX'],
-    description: 'My personal website you are currently on, built with Next.js.',
-    logo: JarockiMeLogo,
-    link: {
-      label: 'github.com',
-      href: 'https://github.com/BartoszJarocki/web-jarocki-me',
-    },
-  },
-  {
-    title: 'Minimal',
-    techStack: ['Side Project', 'Next.js', 'Puppeteer'],
-    description: 'Minimalist calendars, habit trackers and planners generator.',
-    logo: Minimal,
-    link: {
-      label: 'useminimal.com',
-      href: 'https://useminimal.com',
-    },
-  },
-  {
-    title: 'Barepapers',
-    techStack: ['Side Project', 'Next.js', 'Puppeteer'],
-    description: 'Generates beautiful wallpapers using random shapes and gradients.',
-    logo: BarepapersLogo,
-    link: {
-      label: 'barepapers.com',
-      href: 'https://barepapers.com',
-    },
-  },
-  {
-    title: 'Year progress',
-    techStack: ['Side Project', 'TypeScript', 'Next.js'],
-    description: 'Tracks current year progress and displays a countdown.',
-    logo: YearProgressLogo,
-    link: {
-      label: 'getyearprogress.com',
-      href: 'https://getyearprogress.com',
-    },
-  },
-];
-
-export const MyPastProjects: Project[] = [
-  {
-    title: 'Parabol',
-    techStack: ['Full Stack Developer', 'TypeScript', 'React', 'Node.js', 'GraphQL'],
-    description: 'The Agile meeting co-pilot that delivers better meetings with less effort.',
-    logo: ParabolLogo,
-    link: {
-      label: 'github.com',
-      href: 'https://github.com/ParabolInc/parabol',
-    },
-  },
-  {
-    title: 'Evercast',
+    title: 'Careplace',
     techStack: [
-      'Lead Frontend Developer',
-      'From scratch',
       'TypeScript',
       'React',
+      'Next.Js',
+      'RESTful APIs',
       'Node.js',
-      'GraphQL',
+      'Express',
+      'MongoDB',
+      'Docker',
+      'AWS',
     ],
     description:
-      'Creative collaboration platform that combines video conferencing and HD media streaming.',
-    logo: EvercastLogo,
+      'Founded a startup with the idea of having an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform, Careplace, offers a range of services including home care, nursing homes, day centers, and medical equipment.',
+    logo: CareplaceLogo,
     link: {
-      label: 'evercast.us',
-      href: 'https://www.evercast.us/',
+      label: 'github.com',
+      href: 'https://github.com/careplace-github',
     },
   },
+
   {
-    title: 'Mobile Vikings',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Android application for leading virtual mobile operator in Poland.',
-    logo: MobileVikingsLogo,
+    title: 'Swift Suggest',
+    techStack: ['TypeScript', 'AI', 'Browser Extension'],
+    description:
+      'Swift Suggest is a browser extension that provides real-time, context-aware AI suggestions as you type, helping you write faster and more accurately. Inspired by GitHub Copilot.',
+    logo: SwiftSuggestLogo,
     link: {
-      label: 'mobilevikings.pl',
-      href: 'https://mobilevikings.pl/',
+      label: 'github.com',
+      href: 'https://github.com/henrique-efonseca/swift-suggest',
     },
   },
+
   {
-    title: 'Howdy',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Howdy is a place for you to join communities you care about.',
-    logo: Howdy,
+    title: 'AstroPi',
+    techStack: ['Python', 'Raspberry Pi', 'Sense HAT'],
+    description:
+      "Development of an algorithm to collect data for a scientific experiment aimed at obtaining evidence for Galileo's Relativity Theory. The experiment was executed by a Raspberry Pi on the ISS (International Space Station) as part of ESA's (European Space Agency) Astro Pi contest.",
+    logo: AstroPiLogo,
+    readMoreLink: {
+      label: 'Read more',
+      href: 'https://henriquefonseca.me/blog/i-literally-sent-an-algorithm-to-space',
+    },
     link: {
-      label: 'play.google.com',
-      href: 'https://play.google.com/store/apps/details?id=com.howdyhub.howdy',
+      label: 'github.com',
+      href: 'https://github.com/henrique-efonseca/Astro-Pi',
     },
   },
+
   {
-    title: 'Tastycloud',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Android application for managing and displaying restaurant menus in kiosk mode.',
-    logo: TastyCloudLogo,
+    title: 'Carbon Tree',
+    techStack: ['C/C++', 'Python', 'Arduino'],
+    description:
+      'Air Quality Monitoring Stations to be implemented in schools in the municipality of Oeiras. InovLabs & Gulbenkian Institute of Science partnership.',
+    logo: CarbonTreeLogo,
+    readMoreLink: {
+      label: 'Read more',
+      href: 'https://henriquefonseca.me/blog/air-quality-monitoring-stations',
+    },
     link: {
-      label: 'tastycloud.fr',
-      href: 'https://www.tastycloud.fr/',
+      label: 'github.com',
+      href: 'https://github.com/henrique-efonseca/Carbon-Tree',
     },
   },
+
   {
-    title: 'Ambit',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Android application that helps with sharing your contact details.',
-    logo: AmbitLogo,
-  },
-  {
-    title: 'Bim',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Android application that helps with booking a table in a restaurants.',
-    logo: BimLogo,
-  },
-  {
-    title: 'Canal Digital GO',
-    techStack: ['Lead Android Developer', 'Android', 'Kotlin'],
-    description: 'Video streaming mobile application for Canal Digital subscribers.',
-    logo: CDGOLogo,
+    title: 'CanSat',
+    techStack: ['C/C++', 'Arduino'],
+    description:
+      "Developed of a satellite the size of a can to monitor air quality for a scientific experiment. This project was conducted under the scope of ESA's (European Space Agency) CanSat contest, where participants design and build a functioning satellite to fit within a soda can.",
+    logo: CanSatLogo,
+    readMoreLink: {
+      label: 'Read more',
+      href: 'https://henriquefonseca.me/blog/how-i-developed-a-satellite-the-size-of-a-soda-can',
+    },
   },
 ];
 
 export const SocialMedia = [
-  { name: 'Twitter', link: 'https://twitter.com/BartoszJarocki', icon: XIcon },
-  { name: 'Instagram', link: 'https://www.instagram.com/bartosz.jarocki/', icon: InstagramIcon },
-  { name: 'Github', link: 'https://github.com/BartoszJarocki', icon: GitHubIcon },
-  { name: 'LinkedIn', link: 'https://www.linkedin.com/in/bjarocki', icon: LinkedInIcon },
+  { name: 'Email', link: 'mailto:henrique@fonseca.email', icon: EmailIcon },
+  { name: 'LinkedIn', link: 'https://www.linkedin.com/in/henrique-efonseca', icon: LinkedInIcon },
+  { name: 'Github', link: 'https://github.com/henrique-efonseca', icon: GitHubIcon },
 ] as const;
 
 export const Work = [
   {
-    company: 'Parabol',
-    title: 'Full Stack Developer',
-    logo: ParabolLogo,
-    start: '2021',
-    end: '2024',
+    company: 'Software Engineering',
+    title:
+      'Developed several software solutions, including E-Commerce platforms, Marketplaces, ERMs, Dashboards, Auditing Platforms, and more. Worked with algorithms, embedded systems, and IoT devices.',
+    logo: softwareEngineeringLogo,
+    start: '',
+    end: '',
   },
   {
-    company: 'Clevertech',
-    title: 'Lead Android Developer → Full Stack Developer',
-    logo: ClevertechLogo,
-    start: '2015',
-    end: '2021',
+    company: 'Startup Founder',
+    title: 'Founded and bootstrapped an impact Startup that was featured at Web Summit.',
+    logo: startupFounderLogo,
+    start: '',
+    end: '',
   },
   {
-    company: 'Jojo Mobile',
-    title: 'Android Developer → Lead Android Developer',
-    logo: JojoMobileLogo,
-    start: '2012',
-    end: '2015',
+    company: 'Association Founder',
+    title:
+      "Established a branch of START in Lisbon (Europe's leading entrepreneurship student initiative) and a branch of Thirst Project (world’s leading youth water activism organization).",
+    logo: associationFounderLogo,
+    start: '',
+    end: '',
   },
   {
-    company: 'Nokia Siemens Networks',
-    title: 'C/C++ Developer',
-    logo: NSNLogo,
-    start: '2010',
-    end: '2012',
+    company: 'Project Management',
+    title:
+      'Managed projects with cross-functional teams, including developers, designers, and marketers.',
+    logo: projectManagementLogo,
+    start: '',
+    end: '',
+  },
+  {
+    company: 'Networking Engineering',
+    title: 'Designed and implemented network solutions for small and medium-sized businesses.',
+    logo: networkingEngineeringLogo,
+    start: '',
+    end: '',
+  },
+] as const;
+
+export const Experience = [
+  {
+    company: 'Software Engineering',
+    title:
+      'Developed several software solutions, including E-Commerce platforms, Marketplaces, ERMs, Dashboards, Auditing Platforms, and more. Worked with algorithms, embedded systems, and IoT devices.',
+    logo: softwareEngineeringLogo,
+    start: '',
+    end: '',
+  },
+  {
+    company: 'Startup Founder',
+    title: 'Founded and bootstrapped an impact Startup that was featured at Web Summit.',
+    logo: startupFounderLogo,
+    start: '',
+    end: '',
+  },
+  {
+    company: 'Association Founder',
+    title:
+      "Established a branch of START in Lisbon (Europe's leading entrepreneurship student initiative) and a branch of Thirst Project (world’s leading youth water activism organization).",
+    logo: associationFounderLogo,
+    start: '',
+    end: '',
+  },
+  {
+    company: 'Project Management',
+    title:
+      'Managed projects with cross-functional teams, including developers, designers, and marketers.',
+    logo: projectManagementLogo,
+    start: '',
+    end: '',
+  },
+  {
+    company: 'Networking Engineering',
+    title: 'Designed and implemented network solutions for small and medium-sized businesses.',
+    logo: networkingEngineeringLogo,
+    start: '',
+    end: '',
+  },
+] as const;
+
+export const Skills = [
+  {
+    type: 'Frontend',
+    logo: frontEndLogo,
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript / TypeScript',
+      'React',
+      'Next.js',
+      'Angular',
+      'Material UI',
+      'Bootstrap',
+      'Tailwind CSS',
+      'SASS',
+      'Styled Components',
+      'Figma',
+    ],
+  },
+  {
+    type: 'Backend',
+    logo: backEndLogo,
+    skills: [
+      'Node.js',
+      'NestJS',
+      'Express',
+      'Python',
+      'Django',
+      'Flask',
+      'MongoDB',
+      'PostgresSQL',
+      'MySQL',
+      'Prisma',
+      'Mongoose',
+      'Redis',
+      'RESTful APIs',
+    ],
+  },
+  {
+    type: 'Testing',
+    logo: testingLogo,
+    skills: ['Jest', 'Mocha', 'Chai', 'Cypress', 'Puppeteer', 'Postman', 'Insomnia'],
+  },
+  {
+    type: 'DevOps',
+    logo: devOpsLogo,
+    skills: [
+      'Nginx',
+      'Apache',
+      'Docker',
+      'Kubernetes',
+      'AWS',
+      'Azure',
+      'Google Cloud',
+      'CloudFlare',
+      'CI/CD',
+      'Terraform',
+      'Ansible',
+      'Jenkins',
+      'Shell Scripting',
+      'Linux',
+      'Prometheus',
+      'Grafana',
+    ],
+  },
+  {
+    type: 'Embedded Systems',
+    logo: embeddedSystemsLogo,
+    skills: [
+      'C/C++',
+      'Python',
+      'Arduino',
+      'Raspberry Pi',
+      'Sense HAT',
+      'IoT',
+      'Sensors',
+      'Actuators',
+    ],
+  },
+  {
+    type: 'Networking',
+    logo: networkingEngineeringLogo,
+    skills: [
+      'Subnetting',
+      'Routing',
+      'Switching',
+      'IPAM',
+      'DNS Management',
+      'Firewalls and Security Groups',
+      'VPC',
+      'VPN',
+      'Load Balancing',
+      'CDN ',
+      'Network Monitoring and Diagnostics',
+      'Container Networking',
+    ],
   },
 ] as const;
 
@@ -247,16 +360,20 @@ export const CompaniesLinks = [
 
 export const Books = [
   {
+    name: 'Bible',
+    link: 'https://www.bible.com/bible/111/GEN.INTRO1.NIV',
+  },
+  {
+    name: 'Sapiens: A Brief History of Humankind by Yuval Noah Harari',
+    link: 'https://amzn.to/3k7V8Qw',
+  },
+  {
     name: 'Shoe Dog: A Memoir by the Creator of Nike by Phil Knight',
     link: 'https://www.amazon.com/Shoe-Dog-Memoir-Creator-Nike-ebook/dp/B0176M1A44',
   },
   {
     name: 'The Black Swan: The Impact of the Highly Improbable by Nassim Nicholas Taleb',
     link: 'https://amzn.to/2NwihaS',
-  },
-  {
-    name: 'Antifragile: Things That Gain from Disorder by Nassim Nicholas Taleb',
-    link: 'https://amzn.to/3aIG805',
   },
   {
     name: 'Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets by Nassim Nicholas Taleb',
@@ -297,16 +414,8 @@ export const Podcasts = [
     link: 'https://www.youtube.com/@hubermanlab',
   },
   {
-    name: 'Joe Rogan',
-    link: 'https://www.youtube.com/@joerogan',
-  },
-  {
-    name: 'The Tim Ferriss Show',
-    link: 'https://www.youtube.com/channel/UCznv7Vf9nBdJYvBagFdAHWw',
-  },
-  {
-    name: 'Build your SaaS',
-    link: 'https://saas.transistor.fm/',
+    name: 'CdK Podcast',
+    link: 'https://www.youtube.com/@CdK_podcast',
   },
 ] as const;
 

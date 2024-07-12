@@ -29,7 +29,7 @@ There's a certain data format of Notion database that's needed by application. W
 5. `hashtags`
 6. `title`
 7. `description`
-8. `slug` - used as a notes slug for example in `/notes/hello-world` the slug would be `hello-world`
+8. `slug` - used as a notes slug for example in `/blog/hello-world` the slug would be `hello-world`
 9. `published` - used to filter unpublished notes from available notes list
 10. `publishedAt`
 11. `inProgress` - used to display `Work in progress` badge on in the notes list
@@ -41,8 +41,8 @@ Here's how the database in Notion should look like:
 After defining environment variables and your Notion database, run the application
 
 ```bash
-git clone https://github.com/BartoszJarocki/web-jarocki-me
-cd web-jarocki-me
+git clone https://github.com/henriquefonseca/henriquefonseca.me
+cd henriquefonseca.me
 yarn
 yarn dev
 ```
