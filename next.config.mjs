@@ -23,10 +23,9 @@ const config = {
         protocol: 'https',
         hostname: '**.googleapis.com',
       }
-      
     ],
   },
- 
+  output: 'standalone', 
 };
 
 export default config;
