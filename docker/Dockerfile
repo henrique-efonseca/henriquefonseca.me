@@ -7,23 +7,20 @@ RUN apt-get update && apt-get install -y git
 # Set the working directory
 WORKDIR /app
 
-# Copy the package.json and yarn.lock files
-COPY package.json yarn.lock ./
+# Copy package.json and package-lock.json (if available)
+COPY ./package*.json ./
 
-# Clear the cache
-RUN yarn cache clean
-
-# Install the dependencies using yarn
-RUN yarn install
+# Install the dependencies using npm
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the Next.js application
-RUN yarn build
+RUN npm run build
 
 # Expose port 3000
 EXPOSE 3000
 
 # Start the application
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]
