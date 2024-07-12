@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  henriquefonsecame_nextjs:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    restart: always
+    container_name: henriquefonsecame_nextjs
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - project_hub_network
+
+networks:
+  project_hub_network:
+    external: true
