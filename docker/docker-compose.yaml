@@ -5,11 +5,15 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    restart: always
+    container_name: henriquefonsecame_nextjs
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-    volumes:
-      - .:/app
-      - /app/node_modules
-    command: yarn start
+    networks:
+      - project_hub_network
+
+networks:
+  project_hub_network:
+    external: true
