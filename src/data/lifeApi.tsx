@@ -468,8 +468,6 @@ export const PeopleWorthFollowingOnTwitter = [
     name: 'Fred Antunes',
     link: 'https://mobile.x.com/realFredAntunes',
   },
-
-  {},
   {
     name: 'Miguel Milhão',
     link: 'https://x.com/miguel_milhao',
@@ -592,7 +590,8 @@ export const Quotes = [
     author: '― Seneca',
   },
   {
-    content: 'The people who are crazy enough to think they can change the world are the ones who do.',
+    content:
+      'The people who are crazy enough to think they can change the world are the ones who do.',
     author: '― Steve Jobs',
   },
   {
@@ -600,7 +599,8 @@ export const Quotes = [
     author: '― Steve Jobs',
   },
   {
-    content: 'Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.',
+    content:
+      'Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.',
     author: '― Steve Jobs',
   },
 ] as const;
