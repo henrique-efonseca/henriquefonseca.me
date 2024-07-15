@@ -364,6 +364,10 @@ export const Books = [
     link: 'https://www.bible.com/bible/111/GEN.INTRO1.NIV',
   },
   {
+    name: 'Factfulness',
+    link: 'https://a.co/d/7ntKtZq',
+  },
+  {
     name: 'Sapiens: A Brief History of Humankind by Yuval Noah Harari',
     link: 'https://amzn.to/3k7V8Qw',
   },
@@ -417,52 +421,70 @@ export const Podcasts = [
     name: 'CdK Podcast',
     link: 'https://www.youtube.com/@CdK_podcast',
   },
+
+  {
+    name: 'The Tim Ferriss Show',
+    link: 'https://tim.blog/podcast/',
+  },
+
+  {
+    name: 'The Daily Stoic',
+    link: 'https://dailystoic.com/podcast/',
+  },
+
+  {
+    name: 'My First Million',
+    link: 'https://www.youtube.com/@MyFirstMillionPod',
+  },
+
+  {
+    name: 'The Jordan B. Peterson Podcast',
+    link: 'https://www.youtube.com/@JordanBPeterson',
+  },
+  {
+    name: 'The Ground Up Show',
+    link: 'https://www.youtube.com/@mattdavella',
+  },
 ] as const;
 
 export const PeopleWorthFollowingOnTwitter = [
   {
-    name: 'Andrew Wilkinson',
-    link: 'https://twitter.com/awilkinson',
+    name: 'Jesus Christ',
+    link: 'https://www.bible.com/bible/111/GEN.INTRO1.NIV',
   },
   {
-    name: 'Oliur',
-    link: 'https://twitter.com/UltraLinx',
+    name: 'Steve Jobs',
+    link: 'https://en.wikipedia.org/wiki/Steve_Jobs',
   },
   {
-    name: 'Jack Butcher',
-    link: 'https://twitter.com/jackbutcher',
+    name: 'Elon Musk',
+    link: 'https://x.com/elonmusk',
   },
   {
-    name: 'Sahil Lavingia',
-    link: 'https://twitter.com/shl',
+    name: 'Diogo Mónica',
+    link: 'https://x.com/diogomonica',
   },
   {
-    name: 'James Clear',
-    link: 'https://twitter.com/JamesClear',
+    name: 'Fred Antunes',
+    link: 'https://mobile.x.com/realFredAntunes',
+  },
+
+  {},
+  {
+    name: 'Miguel Milhão',
+    link: 'https://x.com/miguel_milhao',
   },
   {
-    name: 'Naval',
-    link: 'https://twitter.com/naval',
+    name: 'David Goggins',
+    link: 'https://x.com/davidgoggins',
   },
   {
-    name: 'Paul Graham',
-    link: 'https://twitter.com/paulg',
+    name: 'Cristiano Ronaldo',
+    link: 'https://x.com/cristiano',
   },
   {
-    name: "John O'Nolan",
-    link: 'https://twitter.com/JohnONolan',
-  },
-  {
-    name: 'Jon Yongfook',
-    link: 'https://twitter.com/yongfook',
-  },
-  {
-    name: 'Joel Gascoigne',
-    link: 'https://twitter.com/joelgascoigne',
-  },
-  {
-    name: 'Pieter Levels',
-    link: 'https://twitter.com/levelsio',
+    name: 'Kobe Bryant',
+    link: 'https://x.com/kobebryant',
   },
 ] as const;
 
@@ -568,6 +590,18 @@ export const Quotes = [
   {
     content: 'We suffer more often in imagination than in reality',
     author: '― Seneca',
+  },
+  {
+    content: 'The people who are crazy enough to think they can change the world are the ones who do.',
+    author: '― Steve Jobs',
+  },
+  {
+    content: 'Stay hungry, stay foolish.',
+    author: '― Steve Jobs',
+  },
+  {
+    content: 'Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.',
+    author: '― Steve Jobs',
   },
 ] as const;
 
