@@ -37,13 +37,10 @@ export const Name = 'Henrique Fonseca';
 
 export const About = (
   <>
-    {`While many might call me a Software Engineer, I consider myself a Problem Solver at heart.
-I'm always looking for new challenges and opportunities to learn and grow!`}{' '}
+    {`I don’t define myself by job titles - I’m a problem solver at heart. \n`} <br />
+    {`My aim is to contribute to society by creating solutions that drive progress and add real value to people’s lives. I’m always seeking new challenges and opportunities to learn and grow.`}{' '}
   </>
 );
-export const AboutExtended = `While many might call me a Software Engineer, I consider myself a Problem Solver at heart.
-I thrive on learning about diverse topics and working across various industries. My journey includes: Software Development, Startup Founder, Association Founder, Project Management, Networking Engineering, and more. My passion lies in leveraging technology to drive innovation and create solutions that propel progress and add value to society.
-I'm always looking for new challenges and opportunities to learn and grow 😄!`;
 
 export type Project = {
   title: string;
@@ -83,7 +80,7 @@ export const MyProjects: Project[] = [
       'AWS',
     ],
     description:
-      'Founded a startup with the idea of having an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform, Careplace, offers a range of services including home care, nursing homes, day centers, and medical equipment.',
+      'Careplace is an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform offers a range of services including home care, nursing homes, day centers, and the ability to buy/rend medical equipment.',
     logo: CareplaceLogo,
     link: {
       label: 'github.com',
@@ -152,61 +149,14 @@ export const SocialMedia = [
   { name: 'Email', link: 'mailto:henrique@fonseca.email', icon: EmailIcon },
   { name: 'LinkedIn', link: 'https://www.linkedin.com/in/henrique-efonseca', icon: LinkedInIcon },
   { name: 'Github', link: 'https://github.com/henrique-efonseca', icon: GitHubIcon },
+  { name: 'X', link: 'https://x.com/hercfonseca', icon: XIcon },
 ] as const;
 
-export const Work = [
-  {
-    company: 'Software Engineering',
-    title:
-      'Developed several software solutions, including E-Commerce platforms, Marketplaces, ERMs, Dashboards, Auditing Platforms, and more. Worked with algorithms, embedded systems, and IoT devices.',
-    logo: softwareEngineeringLogo,
-    start: '',
-    end: '',
-  },
-  {
-    company: 'Startup Founder',
-    title: 'Founded and bootstrapped an impact Startup that was featured at Web Summit.',
-    logo: startupFounderLogo,
-    start: '',
-    end: '',
-  },
-  {
-    company: 'Association Founder',
-    title:
-      "Established a branch of START in Lisbon (Europe's leading entrepreneurship student initiative) and a branch of Thirst Project (world’s leading youth water activism organization).",
-    logo: associationFounderLogo,
-    start: '',
-    end: '',
-  },
-  {
-    company: 'Project Management',
-    title:
-      'Managed projects with cross-functional teams, including developers, designers, and marketers.',
-    logo: projectManagementLogo,
-    start: '',
-    end: '',
-  },
-  {
-    company: 'Networking Engineering',
-    title: 'Designed and implemented network solutions for small and medium-sized businesses.',
-    logo: networkingEngineeringLogo,
-    start: '',
-    end: '',
-  },
-] as const;
 
 export const Experience = [
   {
-    company: 'Software Engineering',
-    title:
-      'Developed several software solutions, including E-Commerce platforms, Marketplaces, ERMs, Dashboards, Auditing Platforms, and more. Worked with algorithms, embedded systems, and IoT devices.',
-    logo: softwareEngineeringLogo,
-    start: '',
-    end: '',
-  },
-  {
     company: 'Startup Founder',
-    title: 'Founded and bootstrapped an impact Startup that was featured at Web Summit.',
+    title: 'Founded and bootstrapped Careplace — an online platform designed to help families find and hire care services for senior relatives. Careplace offers a range of services, including home care, nursing homes, day centers, and options to buy or rent medical equipment. Recognized as an impact startup, Careplace was featured in the Startup Portugal section at Web Summit.',
     logo: startupFounderLogo,
     start: '',
     end: '',
@@ -214,11 +164,22 @@ export const Experience = [
   {
     company: 'Association Founder',
     title:
-      "Established a branch of START in Lisbon (Europe's leading entrepreneurship student initiative) and a branch of Thirst Project (world’s leading youth water activism organization).",
+      "Founded a branch of START in Lisbon (Europe's leading entrepreneurship student initiative) and a branch of Thirst Project (world’s leading youth water activism organization).",
     logo: associationFounderLogo,
     start: '',
     end: '',
   },
+  {
+    company: 'Software Engineering',
+    title:
+      'Developed several software solutions, including MVPs for Startups, E-Commerce platforms, Marketplaces, ERMs (Enterprise Resource Management Softwares), Dashboards, Auditing Platforms, and more. Worked with algorithms, embedded systems, and IoT devices.',
+    logo: softwareEngineeringLogo,
+    start: '',
+    end: '',
+  }
+] as const;
+
+export const _Experience = [
   {
     company: 'Project Management',
     title:
@@ -368,6 +329,10 @@ export const Books = [
     link: 'https://a.co/d/7ntKtZq',
   },
   {
+    name: 'The Lean Startup by Eric Ries',
+    link: 'https://amzn.eu/d/7L4im8v',
+  },
+  {
     name: 'Sapiens: A Brief History of Humankind by Yuval Noah Harari',
     link: 'https://amzn.to/3k7V8Qw',
   },
@@ -447,11 +412,7 @@ export const Podcasts = [
   },
 ] as const;
 
-export const PeopleWorthFollowingOnTwitter = [
-  {
-    name: 'Jesus Christ',
-    link: 'https://www.bible.com/bible/111/GEN.INTRO1.NIV',
-  },
+export const PeopleThatInspireMe = [
   {
     name: 'Steve Jobs',
     link: 'https://en.wikipedia.org/wiki/Steve_Jobs',

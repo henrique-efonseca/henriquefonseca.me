@@ -6,8 +6,8 @@ import React from 'react';
 
 export const Experience = () => {
   return (
-    <div className="max-w-[500px] rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="w-full rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-lg font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Experience</span>
       </h2>
@@ -23,13 +23,13 @@ export const Experience = () => {
               />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
-              <dt className="sr-only">Company</dt>
-              <dd className="flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dt className="sr-only">Experience Title</dt>
+              <dd className="flex-none text-md font-medium text-zinc-900 dark:text-zinc-100">
                 {role.company}
               </dd>
 
-              <dt className="sr-only">Role</dt>
-              <dd className="w-full text-xs text-zinc-500 dark:text-zinc-400">{role.title}</dd>
+              <dt className="sr-only">Experience Description</dt>
+              <dd className="w-full text-sm text-zinc-500 dark:text-zinc-400">{role.title}</dd>
             </dl>
           </li>
         ))}

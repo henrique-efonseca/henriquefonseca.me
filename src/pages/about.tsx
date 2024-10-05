@@ -11,10 +11,9 @@ import { Quote } from '../components/Quote';
 import { Section } from '../components/Section';
 import { SocialLink } from '../components/SocialLink';
 import {
-  AboutExtended,
-  Blogs,
+  About,
   Books,
-  PeopleWorthFollowingOnTwitter,
+  PeopleThatInspireMe,
   Podcasts,
   Quotes,
   SocialMedia,
@@ -55,7 +54,7 @@ export default function AboutMe() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <PageTitle>Hi, I&apos;m Henrique Fonseca.</PageTitle>
-            <div className="mt-6 text-base">{AboutExtended}</div>
+            <div className="mt-6 text-base">{About}</div>
             <div className="mt-6 flex gap-6">
               {SocialMedia.map((socialProfile) => (
                 <SocialLink
@@ -68,9 +67,9 @@ export default function AboutMe() {
             </div>
 
             <Section>
-              <Section.Title as="h2">People that inspire me</Section.Title>
+              <Section.Title as="h2">People I like to learn from</Section.Title>
               <Section.Content>
-                {PeopleWorthFollowingOnTwitter.map<React.ReactNode>((personOnTwitter) => (
+                {PeopleThatInspireMe.map<React.ReactNode>((personOnTwitter) => (
                   <ExternalLink key={personOnTwitter.name} href={personOnTwitter.link}>
                     {personOnTwitter.name}
                   </ExternalLink>
@@ -93,7 +92,7 @@ export default function AboutMe() {
             </Section>
 
             <Section>
-              <Section.Title as="h2">Books worth re-reading</Section.Title>
+              <Section.Title as="h2">Books worth reading</Section.Title>
               <Section.Content>
                 <ul className="mt-1 list-disc list-inside">
                   {Books.map((book) => (

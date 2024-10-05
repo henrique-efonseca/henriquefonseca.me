@@ -39,8 +39,8 @@ export default function Home({ latestPosts }: InferGetStaticPropsType<typeof get
       <Container className="mt-9">
         <div className="max-w-2xl">
           <PageTitle>{Name}</PageTitle>
-          <p className="text-zinc-500 text-balance">
-            Driving Societal Value with Software Solutions
+          <p className="text-zinc-500 text-balance mt-2">
+            Helping Startups Scale their Product
           </p>
           <p className="mt-6 max-w-2xl text-base text-balance">{About}</p>
           <div className="mt-6 flex gap-6">
@@ -56,14 +56,9 @@ export default function Home({ latestPosts }: InferGetStaticPropsType<typeof get
         </div>
       </Container>
       <Container className="mt-12">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col ">
+          <div className="w-full">
             <Experience />
           </div>
-          <div className="flex flex-col lg:ml-12">
-            <Skills />
-          </div>
-        </div>
 
         <div className="w-full space-y-10 mt-20">
           <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
