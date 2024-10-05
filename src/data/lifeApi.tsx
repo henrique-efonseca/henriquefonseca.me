@@ -1,10 +1,6 @@
-import { ExternalLink } from '../components/ExternalLink';
 import { GitHubIcon } from '../components/icons/GitHubIcon';
 import { EmailIcon } from '../components/icons/EmailIcon';
 import { XIcon } from '../components/icons/XIcon';
-
-import ClevertechLogo from '../images/logos/clevertech.png';
-import JojoMobileLogo from '../images/logos/jojomobile.png';
 
 // Projects
 import CareplaceLogo from '../images/logos/careplace.svg';
@@ -26,12 +22,8 @@ import backEndLogo from '../images/emojis/brain.png';
 import testingLogo from '../images/emojis/microscope.png';
 import devOpsLogo from '../images/emojis/gear.png';
 import embeddedSystemsLogo from '../images/emojis/hammer_and_wrench.png';
-import businessLogo from '../images/emojis/necktie.png';
-import financeLogo from '../images/emojis/chart_with_upwards_trend.png';
-import marketingLogo from '../images/emojis/megaphone.png';
 
 import { LinkedInIcon } from '../components/icons/LinkedInIcon';
-import { sk } from 'date-fns/locale';
 
 export const Name = 'Henrique Fonseca';
 
@@ -80,7 +72,7 @@ export const MyProjects: Project[] = [
       'AWS',
     ],
     description:
-      'Careplace is an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform offers a range of services including home care, nursing homes, day centers, and the ability to buy/rend medical equipment.',
+      'Careplace is an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform offers a range of services including home care, nursing homes, day centers, and the ability to buy/rent medical equipment.',
     logo: CareplaceLogo,
     link: {
       label: 'github.com',
@@ -152,11 +144,11 @@ export const SocialMedia = [
   { name: 'X', link: 'https://x.com/hercfonseca', icon: XIcon },
 ] as const;
 
-
 export const Experience = [
   {
     company: 'Startup Founder',
-    title: 'Founded and bootstrapped Careplace — an online platform designed to help families find and hire care services for senior relatives. Careplace offers a range of services, including home care, nursing homes, day centers, and options to buy or rent medical equipment. Recognized as an impact startup, Careplace was featured in the Startup Portugal section at Web Summit.',
+    title:
+      'Founded and bootstrapped Careplace — an online platform designed to help families find and hire care services for senior relatives. Careplace offers a range of services including home care, nursing homes, day centers, and options to buy or rent medical equipment. Recognized as an impact startup, Careplace was featured in the Startup Portugal section at Web Summit.',
     logo: startupFounderLogo,
     start: '',
     end: '',
@@ -176,7 +168,7 @@ export const Experience = [
     logo: softwareEngineeringLogo,
     start: '',
     end: '',
-  }
+  },
 ] as const;
 
 export const _Experience = [
