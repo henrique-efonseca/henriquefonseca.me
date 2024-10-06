@@ -29,8 +29,9 @@ export const Name = 'Henrique Fonseca';
 
 export const About = (
   <>
-    {`I don’t define myself by job titles - I’m a problem solver at heart. \n`} <br />
-    {`My aim is to contribute to society by creating solutions that drive progress and add real value to people’s lives. I’m always seeking new challenges and opportunities to learn and grow.`}{' '}
+    {`I don’t define myself by job titles - I’m a problem solver at heart.`} <br />
+    {`My goal is to contribute to society by creating solutions that drive progress and add real value to people’s lives. `} <br /> 
+    {`Currently, I partner with startups to help them scale by building products that reach product-market fit.`}
   </>
 );
 
