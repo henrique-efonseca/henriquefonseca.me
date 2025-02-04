@@ -30,8 +30,9 @@ export const Name = 'Henrique Fonseca';
 export const About = (
   <>
     {`I don’t define myself by job titles - I’m a problem solver at heart.`} <br />
-    {`My goal is to contribute to society by creating solutions that drive progress and add real value to people’s lives. `} <br /> 
-    {`Currently, I partner with startups to help them scale by building products that reach product-market fit.`}
+    {`My goal is to contribute to society by creating solutions that drive progress and add real value to people’s lives. `}{' '}
+    <br />
+    {`Currently, I'm partnering with startups and helping them build and scale their product.`}
   </>
 );
 
@@ -76,8 +77,8 @@ export const MyProjects: Project[] = [
       'Careplace is an online platform to facilitate families in finding and hiring care services for their senior relatives. The platform offers a range of services including home care, nursing homes, day centers, and the ability to buy/rent medical equipment.',
     logo: CareplaceLogo,
     link: {
-      label: 'github.com',
-      href: 'https://github.com/careplace-github',
+      label: 'careplace.pt',
+      href: 'https://careplace.pt',
     },
   },
 
@@ -149,7 +150,7 @@ export const Experience = [
   {
     company: 'Startup Founder',
     title:
-      'Founded and bootstrapped Careplace — an online platform designed to help families find and hire care services for senior relatives. Careplace offers a range of services including home care, nursing homes, day centers, and options to buy or rent medical equipment. Recognized as an impact startup, Careplace was featured in the Startup Portugal section at Web Summit.',
+      'Founded and bootstrapped Careplace.pt — an online platform designed to help families find and hire care services for senior relatives. Careplace offers a range of services including home care, nursing homes, day centers, and options to buy or rent medical equipment. Recognized as an impact startup, Careplace was featured in the Startup Portugal section at Web Summit.',
     logo: startupFounderLogo,
     start: '',
     end: '',

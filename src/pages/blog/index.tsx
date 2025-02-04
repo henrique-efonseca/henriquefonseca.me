@@ -6,7 +6,7 @@ import { PageLayout } from '../../components/PageLayout';
 import { PostPreview } from '../../components/posts/PostPreview';
 import { Post, postsApi } from '../../lib/postsApi';
 
-const seoTitle = 'posts';
+const seoTitle = 'Blog - Henrique Fonseca';
 const seoDescription =
   'All of my thoughts on programming, building products, leadership, and more. Not structured.';
 

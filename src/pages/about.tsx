@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
 
-import AvatarImage from '../../public/assets/blog/authors/henriquefonseca.png';
+import AvatarImage from '../../public/assets/blog/authors/henriquefonseca.jpg';
 import { Container } from '../components/Container';
 import { ExternalLink } from '../components/ExternalLink';
 import { PageTitle } from '../components/PageTitle';
@@ -20,7 +20,7 @@ import {
   VideosWorthWatching,
 } from '../data/lifeApi';
 
-const seoTitle = `About`;
+const seoTitle = `About - Henrique Fonseca`;
 const seoDescription = `A few words about me.`;
 
 export default function AboutMe() {
